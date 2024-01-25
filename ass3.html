@@ -1,0 +1,126 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style1.css">
+    <title>Conversion Calculator</title>
+</head>
+<body>
+    <header>
+        <h1>Conversion Calculator</h1>
+        <p>Perform various conversions with ease.</p>
+    </header>
+    
+<ul>
+    <li><a href="ass1.html" style="color: yellow;">Home</a></li>
+    <li><a href="ass2.html" style="color: blue;">Conversion Types</a></li>
+    <li><a href="ass3.html" style="color: green;">Conversion Calculator</a></li>
+</ul>
+
+<section>	
+	<img src="image/wpa.jpg" alt = "calculator"
+</section>	
+
+<script>
+
+	function calculateCurrency() {
+    var currencyType = document.getElementById('currencyType').value;
+    var amountInput = document.getElementById('amount').value;
+    
+    if (isNaN(amountInput)) {
+        document.getElementById('currencyResult').innerHTML = 'Please enter a valid number for measurement value';
+        return;
+    }
+
+    var amount = parseFloat(amountInput);
+
+    switch (currencyType) {
+        case 'myrToRup':
+            var result = amount * 17.62;
+            document.getElementById('currencyResult').innerHTML = 'Converted Value: ' + result.toFixed(2) + ' INR';
+            break;
+        case 'rupToMyr':
+            var result = amount * 0.057;
+            document.getElementById('currencyResult').innerHTML = 'Converted Value: ' + result.toFixed(2) + ' MYR';
+            break;
+        default:
+            document.getElementById('currencyResult').innerHTML = 'Please enter a valid number for measurement value';
+            break;
+    }
+}
+
+function calculateMeasurement() {
+    var measurementType = document.getElementById('measurementType').value;
+    var measurementValueInput = document.getElementById('measurementValue').value;
+
+    if (isNaN(measurementValueInput)) {
+        document.getElementById('measurementResult').innerHTML = 'Please enter a valid number for measurement value';
+        return;
+    }
+
+    var measurementValue = parseFloat(measurementValueInput);
+
+    switch (measurementType) {
+        case 'meterToFeet':
+            var result = measurementValue * 3.28;
+            document.getElementById('measurementResult').innerHTML = 'Converted Value: ' + result.toFixed(2) + ' feet';
+            break;
+        case 'feetToMeter':
+            var result = measurementValue * 0.3048;
+            document.getElementById('measurementResult').innerHTML = 'Converted Value: ' + result.toFixed(2) + ' meter';
+            break;
+        case 'kilogramToPound':
+            var result = measurementValue * 2.20462;
+            document.getElementById('measurementResult').innerHTML = 'Converted Value: ' + result.toFixed(2) + ' pounds';
+            break;
+        case 'poundToKilogram':
+            var result = measurementValue * 0.453592;
+            document.getElementById('measurementResult').innerHTML = 'Converted Value: ' + result.toFixed(2) + ' kilograms';
+            break;
+			
+        default:
+            document.getElementById('measurementResult').innerHTML = 'Please enter a valid number for measurement value';
+            break;
+    }
+}
+
+
+
+</script>
+
+
+    <section>
+        <h2>Currency Conversion</h2>
+		<p>Choose a conversion type:</p>
+        <select id="currencyType">
+			<option value="myrToRup">Malaysian Ringgit to Indian Rupee</option>
+            <option value="rupToMyr">Indian Rupee to Malaysian Ringgit</option>
+			
+		</select>
+		<br>
+        <label for="amount">Enter Amount:</label>
+        <input type="text" id="amount" placeholder="Enter amount">
+        <button type="button" onclick="calculateCurrency()">Convert</button>
+        <p id="currencyResult"></p>
+        
+
+        <h2>Measurement Conversion</h2>
+        <p>Choose a conversion type:</p>
+        <select id="measurementType">
+            <option value="meterToFeet">Meter to Feet</option>
+			<option value="feetToMeter">Feet to Meter</option>
+            <option value="kilogramToPound">Kilogram to Pound</option>
+			<option value="poundToKilogram">Pound to Kilogram</option>
+        </select>
+        <br>
+        <label for="measurementValue">Enter Value:</label>
+        <input type="text" id="measurementValue" placeholder="Enter value">
+        <button type="button" onclick="calculateMeasurement()">Convert</button>
+        <p id="measurementResult"></p>
+    </section>
+	
+
+    
+    <footer>
+        <p>&copy; 2024 Adi. All rights reserved.</p>
+    </footer>
+</body>
+</html>
