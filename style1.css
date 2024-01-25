@@ -4,39 +4,37 @@ body {
     color: #333;
     margin: 0;
     padding: 5px;
-	text-align: center;
+    text-align: center; 
 }
 
-
 header {
-    text-align: center;
     background-color: black;
     color: #FFF;
     padding: 10px;
 }
 
 img {
-    width: 100px; 
-    height: 100px; 
-	margin: 10 auto;
-	display: block;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto; 
+    display: block;
 }
 
 ul {
-	text-align:center;
     list-style-type: none;
     padding: 20px;
-	
 }
-
 
 ul li {
     display: inline-block;
-    margin-right: 20px; 
+    margin-right: 20px;
 }
 
+section {
+    margin: 0 auto; 
+    max-width: 800px;
+}
 
 footer {
-    text-align: center;
     margin-top: 50px;
 }
